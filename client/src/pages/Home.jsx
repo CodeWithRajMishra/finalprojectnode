@@ -2,10 +2,26 @@ import Carousel from 'react-bootstrap/Carousel';
 import ban1 from "../images/ban1.jpeg";
 import ban2 from "../images/ban2.webp";
 import ban3 from "../images/ban3.jpeg";
-
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const Home=()=>{
-    return(
+
+  
+    const loadData = async()=>{
+      let api=`${import.meta.env.VITE_BACKENDURL}/product/branddisplay`;  
+      const response = await axios.get(api);
+      console.log(response.data);
+
+    }
+
+    useEffect(()=>{
+      loadData();
+    });
+
+   
+
+  return(
         <>
         <Carousel>
       <Carousel.Item>
@@ -34,8 +50,16 @@ const Home=()=>{
     </Carousel>
     
      <h1 className='heading'> Top Brands</h1>
+
+
+
+       
         </>
     )
-}
+
+  }
+
+  
+
 
 export default Home;
