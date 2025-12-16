@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import AdminLogin from "./admin/AdminLogin";
 import AdminDashBoard from "./admin/AdminDashBoard";
 import AddProduct from "./admin/AddProduct";
+import MyCart from "./pages/MyCart";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="admin" element={<AdminLogin />} />
+            <Route path="mycart" element={<MyCart/>} />
           </Route>
         </Routes>
 
