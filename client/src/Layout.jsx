@@ -7,8 +7,11 @@ import Footer from "./components/Footer";
 const Layout =()=>{
     return(
         <>
-           <Header/>
+        <div id="topFix">
+            <Header/>
            <TopNavbar/>
+        </div>
+          
            
            <Outlet/>
 

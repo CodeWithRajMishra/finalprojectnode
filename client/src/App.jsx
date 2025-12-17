@@ -5,8 +5,8 @@ import AdminLogin from "./admin/AdminLogin";
 import AdminDashBoard from "./admin/AdminDashBoard";
 import AddProduct from "./admin/AddProduct";
 import MyCart from "./pages/MyCart";
-
-
+import CheckOut from "./pages/CheckOut";
+import Registration from "./pages/Registration";
 const App = () => {
   return (
     <>
@@ -17,9 +17,10 @@ const App = () => {
             <Route path="home" element={<Home />} />
             <Route path="admin" element={<AdminLogin />} />
             <Route path="mycart" element={<MyCart/>} />
+            <Route path="checkout" element={<CheckOut/>} />
+            <Route path="registration" element={<Registration/>} />
           </Route>
         </Routes>
-
         <Routes>
           <Route path="/dashboard" element={<AdminDashBoard />}>
             <Route path="addproduct" element={<AddProduct />} />
@@ -29,5 +30,4 @@ const App = () => {
     </>
   )
 }
-
 export default App;

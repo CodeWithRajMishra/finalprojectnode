@@ -5,6 +5,12 @@ const brandDisplay=async(req, res)=>{
    res.send(product); 
 }
 
+const userRegistration=async(req, res)=>{
+    const product = await 
+}
+
+
 module.exports = {
-     brandDisplay
+     brandDisplay,
+     userRegistration
 }

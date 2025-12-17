@@ -11,7 +11,6 @@ import { addToCart } from '../cartSlice';
 const Home=()=>{
   const [mydata, setMydata] = useState([]);
   const dispatch = useDispatch();
-
     const loadData = async()=>{
       let api=`${import.meta.env.VITE_BACKENDURL}/product/branddisplay`;  
       const response = await axios.get(api);

@@ -15,6 +15,7 @@ const TopNavbar = () => {
                         <Nav.Link as={Link} to="kidswear">Kids Wear</Nav.Link>
                         <Nav.Link as={Link} to="mycart">My Cart</Nav.Link>
                         <Nav.Link as={Link} to="search">Search</Nav.Link>
+                         <Nav.Link as={Link} to="registration">Registration</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
