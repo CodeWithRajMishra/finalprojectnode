@@ -2,9 +2,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Registration=()=>{
     const [input, setInput] = useState({});
-
+    const navigate = useNavigate();
     const handleInput=(e)=>{
          let name=e.target.name;
          let value=e.target.value;
@@ -12,10 +13,13 @@ const Registration=()=>{
          console.log(input);
     }
 
-   const handleSubmit=async()=>{
+   const handleSubmit=async(e)=>{
+      e.preventDefault();
       let api=`${import.meta.env.VITE_BACKENDURL}/product/registration`; 
       const response = await axios.post(api, input);
       console.log(response.data);
+      alert("You are Succesfully Registered!!!");
+      navigate("/login");
    }
 
     return(
@@ -29,6 +33,10 @@ const Registration=()=>{
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Enter Email</Form.Label>
         <Form.Control type="text"   name="email" onChange={handleInput} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Enter Password</Form.Label>
+        <Form.Control type="password"   name="password" onChange={handleInput} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Enter Contact No.</Form.Label>
